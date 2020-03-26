@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.lior.sam.Injection
 import com.lior.sam.R
 import com.lior.sam.model.NewsEntity
+import com.lior.sam.model.Sources
 import kotlinx.android.synthetic.main.activity_news.*
 
 class NewsActivity : AppCompatActivity() {
@@ -29,10 +30,10 @@ class NewsActivity : AppCompatActivity() {
         rv_news.layoutManager = LinearLayoutManager(this)
         initAdapter()
         btn_source1.setOnClickListener {
-            viewModel.getNews("apple")
+            viewModel.getNews(Sources.APPLE.type)
         }
         btn_source2.setOnClickListener {
-            viewModel.getNews("techcrunch")
+            viewModel.getNews(Sources.TECHCRUNCH.type)
         }
     }
 
